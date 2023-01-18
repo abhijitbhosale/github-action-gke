@@ -55,7 +55,7 @@ jobs:
           
       - name: Publish Docker Image
         run: |-
-          docker push "gcr.io/$PROJECT_ID:$IMAGE:$TAG" .
+          docker push "gcr.io/$PROJECT_ID:$IMAGE:$TAG"
           
       - name: Setup Kustomize
         run: |-
