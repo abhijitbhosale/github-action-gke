@@ -13,7 +13,7 @@ env:
   IMAGE: github-action-gke-image
   TAG: 1.0.0
   
-job:
+jobs:
   setup-build-publish-deploy:
     name: Setup Build Publish Deploy
     runs-on: ubuntu-latest
