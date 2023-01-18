@@ -47,7 +47,7 @@ jobs:
           
       - name: Set GKE Credetials
         run: |-
-          gcloud container clusters get-credetials "$GKE_CLUSTER" --zone "$GKE_ZONE"
+          gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
           
       - name: Build Docker Image
         run: |-
