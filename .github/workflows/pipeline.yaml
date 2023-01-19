@@ -70,7 +70,7 @@ jobs:
           region: us-central1
           # NOTE: If required, update to the appropriate source folder
           # source: ./
-          image: gcr.io/$PROJECT_ID/$IMAGE:$TAG
+          image: gcr.io/github-action-gke-375012/github-action-gke-image/$IMAGE:$TAG
 
      
     
