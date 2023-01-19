@@ -1,7 +1,7 @@
 apiversion: v1
 kind: Service
 metadata:
-  name:github-action-gke
+  name: github-action-gke
 spec:
   selector:
     app: github-action-gke
