@@ -63,15 +63,7 @@ jobs:
           chmod u+x ./kustomize
           
       - name: 'gcr.io/cloud-builders/gcloud'
-        args: ['run', 'deploy', 'cloudrun-demo', '--image', 'gcr.io/$PROJECT_ID/$IMAGE:$TAG', '--region', 'us-central1', '--platform', 'managed']
-          
-      # Deploy the Docker image to the GKE cluster
-    #  - name: Deploy
-    #    run: |-
-    #      ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE:TAG=gcr.io/$PROJECT_ID/$IMAGE:$TAG
-    #      ./kustomize build . | kubectl apply -f -
-    #      kubectl rollout status deployment/$DEPLOYMENT_NAME
-    #      kubectl get services -o wide  
+        args: ['run', 'deploy', 'cloudrun-demo', '--image', 'gcr.io/$PROJECT_ID/$IMAGE:$TAG', '--region', 'us-central1', '--platform', 'managed'] 
 
      
     
