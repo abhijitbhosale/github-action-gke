@@ -57,10 +57,10 @@ jobs:
         run: |-
           docker push "gcr.io/$PROJECT_ID/$IMAGE:$TAG"
           
-      - name: Setup Kustomize
-        run: |-
-          curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
-          chmod u+x ./kustomize
+      #- name: Setup Kustomize
+      #  run: |-
+      #    curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
+      #    chmod u+x ./kustomize
           
       - name: Deploy to Cloud Run
         id: deploy
@@ -70,7 +70,7 @@ jobs:
           region: us-central1
           # NOTE: If required, update to the appropriate source folder
           # source: ./
-          image: gcr.io/github-action-gke-375012/github-action-gke-image@sha256:a44d66ec6aa99da94cb8eb6e4ea981b6c498bb1ae6b3b097be6858244c83d631
+          image: gcr.io/$PROJECT_ID/github-action-gke-image@sha256:a44d66ec6aa99da94cb8eb6e4ea981b6c498bb1ae6b3b097be6858244c83d631
 
      
     
