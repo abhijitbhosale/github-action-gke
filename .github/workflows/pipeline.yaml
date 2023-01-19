@@ -62,8 +62,15 @@ jobs:
           curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
           chmod u+x ./kustomize
           
-      - name: 'gcr.io/cloud-builders/gcloud'
-        args: ['run', 'deploy', 'github-action-gke', '--image', 'gcr.io/$PROJECT_ID/$IMAGE:$TAG', '--region', 'us-central1', '--platform', 'managed'] 
+      - name: Deploy to Cloud Run
+        id: deploy
+        uses: google-github-actions/deploy-cloudrun@v0
+        with:
+          service: $PROJECT_ID
+          region: us-central1
+          # NOTE: If required, update to the appropriate source folder
+          # source: ./
+          image: 'gcr.io/$PROJECT_ID/$IMAGE:$TAG'
 
      
     
