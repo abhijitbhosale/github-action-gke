@@ -74,7 +74,6 @@ jobs:
           
       - name: Deploy image to GKE cluster
         run: |-
-          sudo apt update
           sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
           export USE_GKE_GCLOUD_AUTH_PLUGIN=True
           ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE:TAG=gcr.io/$PROJECT_ID/$IMAGE:$TAG
