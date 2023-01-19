@@ -14,5 +14,11 @@ spec:
     spec:
       containers: 
         - name: app
-          image: gcr.io/PROJECT_ID/IMAGE:TAG
+          image: gcr.io/github-action-gke-375012/github-action-gke-image@sha256:38777fb98962b6479a78197961d9c6f84c05d136264bd7608cb947989a5b7c27
           imagePullPolicy: Always
+          # This app listens on port 8080 for web traffic by default.
+          ports:
+          - containerPort: 8080
+          env:
+            - name: PORT
+              value: "8080"
