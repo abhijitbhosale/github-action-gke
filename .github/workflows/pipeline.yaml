@@ -12,7 +12,6 @@ env:
   DEPLOYMENT_NAME: github-action-gke
   IMAGE: github-action-gke-image
   TAG: 1.0.0
-  DEPLOY_IMAGE: gcr.io/${{secrets.GKE_PROJECT}}/github-action-gke-image:1.0.0
   
 jobs:
   setup-build-publish-deploy:
@@ -58,11 +57,6 @@ jobs:
         run: |-
           docker push "gcr.io/$PROJECT_ID/$IMAGE:$TAG"
           
-      #- name: Setup Kustomize
-      #  run: |-
-      #    curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
-      #    chmod u+x ./kustomize
-          
       - name: Deploy to Cloud Run
         id: deploy
         uses: google-github-actions/deploy-cloudrun@v0
@@ -71,10 +65,4 @@ jobs:
           region: us-central1
           # NOTE: If required, update to the appropriate source folder
           # source: ./
-          #image: 'gcr.io/${{ env.PROJECT_ID }}/github-action-gke-image@sha256:a44d66ec6aa99da94cb8eb6e4ea981b6c498bb1ae6b3b097be6858244c83d631'
           image: 'gcr.io/${{ env.PROJECT_ID }}/${{ env.IMAGE }}:${{ env.TAG }}'
-
-      #- name: Deploy to Cloud Run
-      #  run: |-
-      #    gcloud run deploy "gcr.io/$PROJECT_ID/$IMAGE:$TAG"
-    
