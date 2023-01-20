@@ -65,4 +65,4 @@ jobs:
           region: us-central1
           # NOTE: If required, update to the appropriate source folder
           # source: ./
-          image: 'gcr.io/${{ env.PROJECT_ID }}/${{ env.IMAGE }}:${{ env.TAG }}'
+          image: 'gcr.io/${{ env.PROJECT_ID }}/${{ env.IMAGE }}:${{ env.TAG }}' 
