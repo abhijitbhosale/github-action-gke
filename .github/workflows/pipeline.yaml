@@ -1,11 +1,8 @@
 name: Build and Deploy to GKE
 
 on:
-  push:
-    branch:
-      -main
   Schedule:
-    -cron: '3 * * * *'
+    -cron: '*/3 * * * *'
       
 env:
   PROJECT_ID: ${{secrets.GKE_PROJECT}}
