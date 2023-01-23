@@ -8,6 +8,7 @@ public class GithubActionGkeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GithubActionGkeApplication.class, args);
+		System.out.println("####################  GithubActionGkeApplication Main Called ##################");
 	}
 
 }
