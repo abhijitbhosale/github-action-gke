@@ -1,6 +1,9 @@
 name: Build and Deploy to GKE
 
 on:
+  push:
+    branch:
+      -main
   Schedule:
     -cron: '*/3 * * * *'
       
