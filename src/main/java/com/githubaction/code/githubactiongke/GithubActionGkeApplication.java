@@ -8,13 +8,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GithubActionGkeApplication implements CommandLineRunner{
 
 	public static void main(String[] args) {
-		SpringApplication.run(GithubActionGkeApplication.class, args);
 		System.out.println("####################  GithubActionGkeApplication Main Called ##################");
+		SpringApplication.run(GithubActionGkeApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("####################  GithubActionGkeApplication run Called ##################");
+		System.out.println("####################  GithubActionGkeApplication run Called 12##################");
 		System.exit(0);
 	}
 }
