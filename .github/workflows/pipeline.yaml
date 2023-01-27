@@ -4,8 +4,6 @@ on:
   push:
     branch:
       -main
-  Schedule:
-    -cron: '*/3 * * * *'
       
 env:
   PROJECT_ID: ${{secrets.GKE_PROJECT}}
@@ -13,7 +11,7 @@ env:
   GKE_ZONE: us-central1
   DEPLOYMENT_NAME: github-action-gke
   IMAGE: github-action-gke-image
-  TAG: 1.0.0
+  TAG: 1.0.${{ github.run_number }}
   
 jobs:
   setup-build-publish-deploy:
